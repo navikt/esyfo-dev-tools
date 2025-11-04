@@ -1,0 +1,35 @@
+meta {
+  name: Patch a single dialog
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~If-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {
+      "operationType": "",
+      "path": "",
+      "op": "",
+      "from": "",
+      "value": ""
+    }
+  ]
+}
