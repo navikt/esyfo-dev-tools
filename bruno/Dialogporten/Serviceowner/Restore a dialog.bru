@@ -1,0 +1,23 @@
+meta {
+  name: Restore a dialog
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/actions/restore
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

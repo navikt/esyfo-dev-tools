@@ -1,0 +1,19 @@
+meta {
+  name: Retrieve service owner labels for a dialog.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/context/labels
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

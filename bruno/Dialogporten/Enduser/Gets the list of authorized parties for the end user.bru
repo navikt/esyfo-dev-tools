@@ -1,0 +1,15 @@
+meta {
+  name: Gets the list of authorized parties for the end user
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/parties
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

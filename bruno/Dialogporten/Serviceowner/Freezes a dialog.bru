@@ -1,0 +1,23 @@
+meta {
+  name: Freezes a dialog
+  type: http
+  seq: 23
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/actions/freeze
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

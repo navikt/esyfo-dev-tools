@@ -1,0 +1,20 @@
+meta {
+  name: Gets a single dialog seen log record (GET)
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/:dialogId/seenlog/:seenLogId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  seenLogId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

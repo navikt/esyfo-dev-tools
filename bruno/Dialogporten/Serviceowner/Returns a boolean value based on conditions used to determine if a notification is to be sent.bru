@@ -1,0 +1,25 @@
+meta {
+  name: Returns a boolean value based on conditions used to determine if a notification is to be sent
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/actions/should-send-notification
+  body: none
+  auth: bearer
+}
+
+params:query {
+  conditionType: 
+  activityType: 
+  ~transmissionId: 
+}
+
+params:path {
+  dialogId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

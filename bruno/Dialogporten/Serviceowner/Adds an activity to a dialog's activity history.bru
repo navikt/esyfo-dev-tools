@@ -1,0 +1,40 @@
+meta {
+  name: Adds an activity to a dialog's activity history
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/activities
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "createdAt": "",
+    "extendedType": "",
+    "type": "",
+    "transmissionId": "",
+    "performedBy": "",
+    "description": [
+      {
+        "value": "",
+        "languageCode": ""
+      }
+    ]
+  }
+}

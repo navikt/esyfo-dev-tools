@@ -1,0 +1,23 @@
+meta {
+  name: Permanently deletes a dialog
+  type: http
+  seq: 22
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/actions/purge
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

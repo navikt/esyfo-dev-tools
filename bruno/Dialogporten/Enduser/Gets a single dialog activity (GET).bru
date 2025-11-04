@@ -1,0 +1,24 @@
+meta {
+  name: Gets a single dialog activity (GET)
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/:dialogId/activities/:activityId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  activityId: 
+}
+
+headers {
+  ~accept-Language: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

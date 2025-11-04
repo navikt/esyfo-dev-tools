@@ -1,0 +1,20 @@
+meta {
+  name: Gets a single dialog transmission
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/transmissions/:transmissionId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  transmissionId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

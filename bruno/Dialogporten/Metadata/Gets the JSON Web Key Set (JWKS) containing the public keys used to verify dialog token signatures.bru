@@ -1,0 +1,11 @@
+meta {
+  name: Gets the JSON Web Key Set (JWKS) containing the public keys used to verify dialog token signatures
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/v1/.well-known/jwks.json
+  body: none
+  auth: inherit
+}

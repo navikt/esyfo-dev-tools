@@ -1,0 +1,11 @@
+meta {
+  name: Gets the OAuth 2.0 Metadata for automatic configuration of clients verifying dialog tokens
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/v1/.well-known/oauth-authorization-server
+  body: none
+  auth: inherit
+}

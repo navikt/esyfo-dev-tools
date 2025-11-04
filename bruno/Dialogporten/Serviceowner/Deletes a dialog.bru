@@ -1,0 +1,23 @@
+meta {
+  name: Deletes a dialog
+  type: http
+  seq: 19
+}
+
+delete {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

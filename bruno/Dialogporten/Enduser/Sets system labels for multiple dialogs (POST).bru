@@ -1,0 +1,29 @@
+meta {
+  name: Sets system labels for multiple dialogs (POST)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/context/systemlabels/actions/bulkset
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "dialogs": [
+      {
+        "dialogId": "",
+        "endUserContextRevision": ""
+      }
+    ],
+    "systemLabels": [],
+    "addLabels": [],
+    "removeLabels": []
+  }
+}

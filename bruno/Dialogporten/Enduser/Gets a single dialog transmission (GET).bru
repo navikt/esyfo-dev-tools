@@ -1,0 +1,24 @@
+meta {
+  name: Gets a single dialog transmission (GET)
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/:dialogId/transmissions/:transmissionId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  transmissionId: 
+}
+
+headers {
+  ~accept-Language: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

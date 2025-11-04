@@ -1,0 +1,35 @@
+meta {
+  name: Sets the system labels of a dialog
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/endusercontext/systemlabels
+  body: json
+  auth: bearer
+}
+
+params:query {
+  enduserId: 
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "systemLabels": [],
+    "addLabels": [],
+    "removeLabels": []
+  }
+}

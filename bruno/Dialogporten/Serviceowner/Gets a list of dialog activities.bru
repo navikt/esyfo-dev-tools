@@ -1,0 +1,19 @@
+meta {
+  name: Gets a list of dialog activities
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/activities
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Gets a single dialog (GET)
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/:dialogId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~accept-Language: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

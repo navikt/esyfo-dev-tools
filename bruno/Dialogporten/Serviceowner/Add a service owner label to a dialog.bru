@@ -1,0 +1,29 @@
+meta {
+  name: Add a service owner label to a dialog
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/context/labels
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

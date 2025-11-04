@@ -1,0 +1,24 @@
+meta {
+  name: Delete a service owner label for a dialog
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/context/labels/:label
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  label: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

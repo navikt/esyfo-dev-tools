@@ -1,0 +1,44 @@
+meta {
+  name: Gets a list of dialogs (GET)
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~org: 
+  ~serviceResource: 
+  ~party: 
+  ~extendedStatus: 
+  ~externalReference: 
+  ~status: 
+  ~createdAfter: 
+  ~createdBefore: 
+  ~updatedAfter: 
+  ~updatedBefore: 
+  ~contentUpdatedAfter: 
+  ~contentUpdatedBefore: 
+  ~dueAfter: 
+  ~dueBefore: 
+  ~process: 
+  ~systemLabel: 
+  ~excludeApiOnly: 
+  ~search: 
+  ~searchLanguageCode: 
+  ~orderBy: 
+  ~continuationToken: 
+  ~limit: 
+}
+
+headers {
+  ~accept-Language: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

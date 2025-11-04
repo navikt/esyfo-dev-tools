@@ -1,0 +1,20 @@
+meta {
+  name: Gets a single dialog activity
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/activities/:activityId
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+  activityId: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

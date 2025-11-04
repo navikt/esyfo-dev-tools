@@ -1,0 +1,23 @@
+meta {
+  name: Gets a list of dialog activities (GET)
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/v1/enduser/dialogs/:dialogId/activities
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~accept-Language: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

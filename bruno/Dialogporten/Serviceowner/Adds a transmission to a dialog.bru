@@ -1,0 +1,55 @@
+meta {
+  name: Adds a transmission to a dialog
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/api/v1/serviceowner/dialogs/:dialogId/transmissions
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dialogId: 
+}
+
+headers {
+  ~if-Match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "createdAt": "",
+    "authorizationAttribute": "",
+    "extendedType": "",
+    "externalReference": "",
+    "relatedTransmissionId": "",
+    "type": "",
+    "sender": "",
+    "content": "",
+    "attachments": [
+      {
+        "id": "",
+        "displayName": [
+          {
+            "value": "",
+            "languageCode": ""
+          }
+        ],
+        "urls": [
+          {
+            "url": "",
+            "mediaType": "",
+            "consumerType": ""
+          }
+        ]
+      }
+    ]
+  }
+}
