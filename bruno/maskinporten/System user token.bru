@@ -6,8 +6,13 @@ meta {
 
 post {
   url: https://test.maskinporten.no/token
-  body: none
+  body: formUrlEncoded
   auth: inherit
+}
+
+body:form-urlencoded {
+  grant_type: urn:ietf:params:oauth:grant-type:jwt-bearer
+  assertion: {{jwt_signed}}
 }
 
 script:pre-request {
