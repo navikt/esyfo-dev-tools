@@ -27,8 +27,6 @@ script:pre-request {
   const authority = "iso6523-actorid-upis";
   const header = { alg: "RS256", kid: env("keyId"), typ: "JWT" };
   const now = Math.floor(Date.now() / 1000);
-  const systemOwnerOrg = env("systemOwnerOrg", false);
-  const systemUserOrg = env("systemUserOrg", false);
   
   const payload = {
       aud: "https://test.maskinporten.no/",
@@ -50,4 +48,19 @@ script:pre-request {
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+docs {
+  # Create a plain Maskinporten token 
+  
+  The token is based on a token exchange, using a private key connected to a Maskinporten-client to sign the claim.
+  
+  ## Variables used
+  
+  | Key         | Description                           |
+  |-------------|---------------------------------------|
+  |privateKey   |PEM used in Maskinporten               |
+  |clientId     |The client id connected to Maskinporten|
+  |keyId        |The id of the PEM in Maskinporten      |
+  |scope        |The scope you want for the token       |
 }

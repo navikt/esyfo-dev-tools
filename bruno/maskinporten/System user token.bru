@@ -22,7 +22,6 @@ script:pre-request {
   const authority = "iso6523-actorid-upis";
   const header = { alg: "RS256", kid: env("keyId"), typ: "JWT" };
   const now = Math.floor(Date.now() / 1000);
-  const systemOwnerOrg = env("systemOwnerOrg", false);
   const systemUserOrg = env("systemUserOrg", false);
   
   const payload = {
@@ -54,4 +53,26 @@ script:pre-request {
 settings {
   encodeUrl: true
   timeout: 0
+}
+
+docs {
+  # Create a system user token
+  
+  This extends the claims used in the token exhange for the `POST Token` request in this collection. In addition to the regular claims, an authorization_details field is set - which requests a *system user* (SU) token. This requires: 
+  
+  ## Requirements:
+  * a client from Maskinporten and registering it as a system in Altinn
+  * Creating a SU on behalf of a customer/user. The daglig leder of the organization the SU is created for, needs to log into Altinn and accept the creation of the SU.
+  
+  *More information about system user creation is found in the docs at [esyfo-dev-tolls](https://github.com/navikt/esyfo-dev-tools)*
+  
+  This requests requires the following variables to be set in the `maskinporten` environment:
+  
+  | Key         | Description                           |
+  |-------------|---------------------------------------|
+  |privateKey   |PEM used in Maskinporten               |
+  |clientId     |The client id connected to Maskinporten|
+  |keyId        |The id of the PEM in Maskinporten      |
+  |scope        |The scope you want for the token       |
+  |systemUserOrg|The organization for the SU            |
 }
