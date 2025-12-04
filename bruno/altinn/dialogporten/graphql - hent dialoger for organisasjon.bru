@@ -61,8 +61,10 @@ vars:pre-request {
 
 script:pre-request {
   const http = require("axios");
-  const systembrukerOrgnr = bru.getCollectionVar("systemKundeOrgnr")
+  const systembrukerOrgnr = bru.getFolderVar("systemKundeOrgnr");
+  
   const tokenrespons = await http.get("https://esyfo-token.intern.dev.nav.no/dialogporten/" + systembrukerOrgnr)
+  console.log(tokenrespons.data)
   req.setHeader("Authorization", "Bearer "+ tokenrespons.data);
 }
 
